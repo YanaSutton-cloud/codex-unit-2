@@ -1,9 +1,21 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { loadDocument } from "./_test-utils";
 
 describe("Level 09 — From div to Semantic Elements", () => {
-  it("prefers semantic landmarks over a single top-level layout div", () => {
-    const doc = loadDocument(9, "lesson-01-semantic-tags");
+  let doc: any = null;
+
+  beforeEach(() => {
+    doc = loadDocument(9, "lesson-01-semantic-tags");
+  });
+
+  it("lists top-level body children tags", () => {
+    const bodyChildren = Array.from(doc.body.children).map((n) =>
+      n.tagName.toLowerCase(),
+    );
+    expect(Array.isArray(bodyChildren)).toBe(true);
+  });
+
+  it("includes multiple semantic elements at top-level (avoid single wrapper div)", () => {
     const bodyChildren = Array.from(doc.body.children).map((n) =>
       n.tagName.toLowerCase(),
     );
@@ -16,7 +28,6 @@ describe("Level 09 — From div to Semantic Elements", () => {
       "article",
     ]);
     const present = bodyChildren.filter((t) => semanticSet.has(t));
-    // Require at least two semantic elements at top-level to avoid single-wrapper div layouts
     expect(present.length).toBeGreaterThanOrEqual(2);
   });
 });
