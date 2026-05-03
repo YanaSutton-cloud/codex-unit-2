@@ -6,8 +6,38 @@
     <title>Lesson 02 — Level 09</title>
   </head>
   <body>
-    <h1>Level 09 — Basic Validation</h1>
+    <h1>User Info</h1>
     <form>
+      <fieldset>
+        <legend>Login</legend>
+        <label>
+          Email:
+          <input type="email" required />
+        </label>
+
+        <br />
+        <label>
+          Password:
+          <input type="password" required />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Profile</legend>
+        <label>Height:</label>
+        <input type="range" min="48" max="96" /> (inches)
+        <br />
+        <label>Phone:</label>
+        <input type="tel" minlength="10" maxlength="10" />
+        <br />
+        <label>Age:</label>
+        <input type="number" />
+        <br />
+        <label>Pictures:</label>
+        <input type="file" />
+      </fieldset>
       <!-- TODO: Add required attributes and minlength/maxlength where appropriate -->
       <!-- TODO: If using a range input, include min and max -->
     </form>
