@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 02 — Visualize with HTML/CSS", () => {
-  it("includes nested elements for margin, border, padding, and content", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-03-box-model",
@@ -11,17 +14,26 @@ describe("Level 02 — Visualize with HTML/CSS", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const margin = doc.querySelector(".layer-margin");
-    const border = doc.querySelector(".layer-border");
-    const padding = doc.querySelector(".layer-padding");
-    const content = doc.querySelector(".layer-content");
+  it("contains .layer-margin element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".layer-margin")).toBeTruthy();
+  });
 
-    if (!margin || !border || !padding || !content) {
-      throw new Error(
-        "Helpful Hint: Add nested elements with classes .layer-margin, .layer-border, .layer-padding, and .layer-content to represent each box layer.",
-      );
-    }
+  it("contains .layer-border element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".layer-border")).toBeTruthy();
+  });
+
+  it("contains .layer-padding element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".layer-padding")).toBeTruthy();
+  });
+
+  it("contains .layer-content element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".layer-content")).toBeTruthy();
   });
 });

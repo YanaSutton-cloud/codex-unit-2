@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 09 — Basic Validation", () => {
-  it("checks for required and range min/max where appropriate", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -11,22 +14,22 @@ describe("Level 09 — Basic Validation", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const hasRequired = !!doc.querySelector("[required]");
-    if (!hasRequired)
-      throw new Error(
-        "Helpful Hint: Mark at least one important field as required using the `required` attribute.",
-      );
+  it("has at least one required field", () => {
+    expect(doc).toBeTruthy();
+    const hasRequired = !!doc!.querySelector("[required]");
+    expect(hasRequired).toBeTruthy();
+  });
 
-    const range = doc.querySelector('input[type="range"]');
-    if (range) {
-      const min = range.getAttribute("min");
-      const max = range.getAttribute("max");
-      if (min === null || max === null)
-        throw new Error(
-          "Helpful Hint: For range inputs, include both `min` and `max` attributes.",
-        );
-    }
+  it("range inputs include min and max when present", () => {
+    expect(doc).toBeTruthy();
+    const range = doc!.querySelector('input[type="range"]');
+    expect(
+      !range ||
+        (range.getAttribute("min") !== null &&
+          range.getAttribute("max") !== null),
+    ).toBeTruthy();
   });
 });

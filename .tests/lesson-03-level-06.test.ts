@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 06 — Combining Layout Rules", () => {
-  it("includes two column elements for a simple layout", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-03-box-model",
@@ -11,14 +14,16 @@ describe("Level 06 — Combining Layout Rules", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const left = doc.querySelector(".col.left");
-    const right = doc.querySelector(".col.right");
-    if (!left || !right) {
-      throw new Error(
-        "Helpful Hint: Add two column elements with classes .col.left and .col.right to build the two-column layout.",
-      );
-    }
+  it("contains .col.left element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".col.left")).toBeTruthy();
+  });
+
+  it("contains .col.right element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".col.right")).toBeTruthy();
   });
 });
