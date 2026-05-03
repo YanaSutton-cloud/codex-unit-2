@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 05 — Select, Optgroup & Options", () => {
-  it("has a select with at least two options and an optgroup", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -11,17 +14,23 @@ describe("Level 05 — Select, Optgroup & Options", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const select = doc.querySelector("select");
-    if (!select)
-      throw new Error("Helpful Hint: Add a <select> element with options.");
+  it("contains a select element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("select")).toBeTruthy();
+  });
+
+  it("select has at least two options", () => {
+    expect(doc).toBeTruthy();
+    const select = doc!.querySelector("select");
     const options = select ? select.querySelectorAll("option") : [];
-    if (options.length < 2)
-      throw new Error(
-        "Helpful Hint: Add at least two <option> elements inside the <select>.",
-      );
-    if (!doc.querySelector("optgroup"))
-      throw new Error("Helpful Hint: Use <optgroup> to group related options.");
+    expect(options.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it("contains an optgroup", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("optgroup")).toBeTruthy();
   });
 });

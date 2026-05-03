@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 function hasLabelFor(element) {
   const id = element.getAttribute("id");
@@ -16,7 +17,9 @@ function hasLabelFor(element) {
 }
 
 describe("Level 07 — Labels & Accessibility", () => {
-  it("ensures key controls have accessible labels", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -24,20 +27,23 @@ describe("Level 07 — Labels & Accessibility", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
+  it("has form controls to label", () => {
+    expect(doc).toBeTruthy();
     const controls = Array.from(
-      doc.querySelectorAll("input, textarea, select"),
+      doc!.querySelectorAll("input, textarea, select"),
     );
-    if (controls.length === 0)
-      throw new Error(
-        "Helpful Hint: Add form controls (inputs, textarea, or select) to label.",
-      );
+    expect(controls.length).toBeGreaterThan(0);
+  });
 
+  it("all key controls have accessible labels", () => {
+    expect(doc).toBeTruthy();
+    const controls = Array.from(
+      doc!.querySelectorAll("input, textarea, select"),
+    );
     const unlabeled = controls.filter((c) => !hasLabelFor(c));
-    if (unlabeled.length)
-      throw new Error(
-        'Helpful Hint: Ensure each control has an accessible label: either a <label for="id"> or wrap the input inside a <label>.',
-      );
+    expect(unlabeled.length).toBe(0);
   });
 });

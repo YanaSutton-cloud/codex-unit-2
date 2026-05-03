@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 11 — Integrate & Polish", () => {
-  it("verifies integration checks: form, labels, and at least one required field", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -11,20 +14,30 @@ describe("Level 11 — Integrate & Polish", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    if (!doc.querySelector("form"))
-      throw new Error(
-        "Helpful Hint: Add a <form> element to integrate components.",
-      );
+  it("contains a form", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("form")).toBeTruthy();
+  });
+
+  it("has form controls", () => {
+    expect(doc).toBeTruthy();
     const controls = Array.from(
-      doc.querySelectorAll("input, textarea, select"),
+      doc!.querySelectorAll("input, textarea, select"),
     );
-    if (controls.length === 0)
-      throw new Error("Helpful Hint: Add some form controls to integrate.");
+    expect(controls.length).toBeGreaterThan(0);
+  });
+
+  it("all controls have accessible labels", () => {
+    expect(doc).toBeTruthy();
+    const controls = Array.from(
+      doc!.querySelectorAll("input, textarea, select"),
+    );
     const labeled = controls.filter((c) => {
       const id = c.getAttribute("id");
-      if (id && doc.querySelector(`label[for="${id}"]`)) return true;
+      if (id && doc!.querySelector(`label[for="${id}"]`)) return true;
       let p = c.parentElement;
       while (p) {
         if (p.tagName && p.tagName.toLowerCase() === "label") return true;
@@ -32,11 +45,11 @@ describe("Level 11 — Integrate & Polish", () => {
       }
       return false;
     });
-    if (labeled.length !== controls.length)
-      throw new Error(
-        "Helpful Hint: Ensure all controls have accessible labels before polishing.",
-      );
-    if (!doc.querySelector("[required]"))
-      throw new Error("Helpful Hint: Mark at least one key field as required.");
+    expect(labeled.length).toBe(controls.length);
+  });
+
+  it("marks at least one field as required", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("[required]")).toBeTruthy();
   });
 });

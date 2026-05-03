@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 03 — Padding / Border / Margin Deep Dive", () => {
-  it("has a demo box element to adjust padding/border/margin", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-03-box-model",
@@ -11,13 +14,12 @@ describe("Level 03 — Padding / Border / Margin Deep Dive", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const demo = doc.querySelector("#demo-box") || doc.querySelector(".demo");
-    if (!demo) {
-      throw new Error(
-        'Helpful Hint: Add an element with id="demo-box" or class="demo" so students can modify padding, border, and margin in CSS.',
-      );
-    }
+  it("contains #demo-box or .demo element", () => {
+    expect(doc).toBeTruthy();
+    const demo = doc!.querySelector("#demo-box") || doc!.querySelector(".demo");
+    expect(demo).toBeTruthy();
   });
 });

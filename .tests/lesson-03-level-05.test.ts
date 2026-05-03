@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 05 — Inline vs Block Elements", () => {
-  it("provides examples of inline and block elements", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-03-box-model",
@@ -11,14 +14,16 @@ describe("Level 05 — Inline vs Block Elements", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const inline = doc.querySelector(".demo-inline");
-    const block = doc.querySelector(".demo-block");
-    if (!inline || !block) {
-      throw new Error(
-        "Helpful Hint: Add elements with classes .demo-inline and .demo-block to compare display types.",
-      );
-    }
+  it("contains .demo-inline element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".demo-inline")).toBeTruthy();
+  });
+
+  it("contains .demo-block element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector(".demo-block")).toBeTruthy();
   });
 });

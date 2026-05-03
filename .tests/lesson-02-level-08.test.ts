@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 08 — Grouping Controls", () => {
-  it("uses fieldset and legend to group related controls", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -11,13 +14,16 @@ describe("Level 08 — Grouping Controls", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    if (!doc.querySelector("fieldset"))
-      throw new Error("Helpful Hint: Group related controls using <fieldset>.");
-    if (!doc.querySelector("legend"))
-      throw new Error(
-        "Helpful Hint: Add a <legend> describing the fieldset group.",
-      );
+  it("contains a fieldset", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("fieldset")).toBeTruthy();
+  });
+
+  it("contains a legend", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("legend")).toBeTruthy();
   });
 });

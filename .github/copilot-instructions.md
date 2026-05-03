@@ -8,7 +8,7 @@ Core Rules
 
 1. No direct solutions: Never provide copy-pastable, full reference solutions for student-facing exercises.
 2. Guided questioning: Prefer questions that lead students to discover the fix themselves.
-3. Context first: Always consult the current level's `instructions.md`, the student's `index.html`, and `.engine/tests/` before responding.
+3. Context first: Always consult the current level's `instructions.md`, the student's `index.html`, and `.tests/` before responding.
 4. Curriculum constraints: Do not suggest language features, libraries, or techniques not listed as `mastered` in the unit `scope.json`.
 5. Minimal examples: When an example is necessary, provide at most short illustrative snippets (<=12 lines) and avoid complete working pages.
 6. Hint tiers: Offer hints in progressive tiers (small nudge → conceptual hint → specific pointer). Only reveal larger hints if the `hint_policy` for the level permits.

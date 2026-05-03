@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 04 — Default Element Styles", () => {
-  it("includes headings and paragraphs to inspect default margins", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-03-box-model",
@@ -11,14 +14,16 @@ describe("Level 04 — Default Element Styles", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const h1 = doc.querySelector("h1");
-    const p = doc.querySelector("p");
-    if (!h1 || !p) {
-      throw new Error(
-        "Helpful Hint: Include an <h1> and a <p> so students can view and override user-agent default margins.",
-      );
-    }
+  it("contains an h1 element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("h1")).toBeTruthy();
+  });
+
+  it("contains a p element", () => {
+    expect(doc).toBeTruthy();
+    expect(doc!.querySelector("p")).toBeTruthy();
   });
 });

@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { JSDOM } from "jsdom";
-const path = require("path");
+import { describe, it, expect, beforeEach } from "vitest";
+import path from "path";
 
 describe("Level 04 — Input Types", () => {
-  it("contains common input types: email, tel, password, number, range, file", () => {
+  let doc: Document | null = null;
+
+  beforeEach(() => {
     const file = path.join(
       process.cwd(),
       "lesson-02-forms",
@@ -11,15 +14,14 @@ describe("Level 04 — Input Types", () => {
       "index.html",
     );
     const html = readFileSync(file, "utf-8");
-    const doc = new JSDOM(html).window.document;
+    doc = new JSDOM(html).window.document;
+  });
 
-    const types = ["email", "tel", "password", "number", "range", "file"];
-    const missing = types.filter(
-      (t) => !doc.querySelector(`input[type="${t}"]`),
-    );
-    if (missing.length)
-      throw new Error(
-        `Helpful Hint: Add inputs with types: ${missing.join(", ")}.`,
-      );
+  const types = ["email", "tel", "password", "number", "range", "file"];
+  types.forEach((t) => {
+    it(`contains input type: ${t}`, () => {
+      expect(doc).toBeTruthy();
+      expect(doc!.querySelector(`input[type="${t}"]`)).toBeTruthy();
+    });
   });
 });
