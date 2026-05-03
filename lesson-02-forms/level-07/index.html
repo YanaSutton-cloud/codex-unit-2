@@ -6,9 +6,25 @@
     <title>Lesson 02 — Level 07</title>
   </head>
   <body>
-    <h1>Level 07 — Labels & Accessibility</h1>
+    <h1>Ratings</h1>
     <form>
-      <!-- TODO: Attach labels to controls. Use <label for="id"> or wrap the input inside <label>. -->
+      <label>
+        Good:
+        <input type="radio" name="rating" />
+      </label>
+
+      <label for="bad-rating">Bad</label>
+      <input id="bad-rating" type="radio" name="rating" />
+      <br />
+      <label for="friday-show">Did you watch the show on Friday?</label>
+      <input id="friday-show" type="checkbox" /> (Check for YES. Uncheck for
+      NO.)
+      <br />
+      <label for="saturday-show">Did you watch the show on Saturday?</label>
+      <input id="saturday-show" type="checkbox" /> (Check for YES. Uncheck for
+      NO.)
+      <br />
+      <button type="submit">Submit Ratings</button>
     </form>
   </body>
 </html>
