@@ -2,6 +2,10 @@
 // TODO: implement a named handler that accepts event and logs a short explanation
 // TODO: assign the handler to form.onsubmit (use the form's id in the HTML)
 
+const form = document.querySelector("form");
+
+form.onsubmit = handleSubmit;
+
 function handleSubmit(event) {
   // TODO: accept event and log a message mentioning 'onsubmit'
   console.log("onsubmit handler called");
@@ -9,4 +13,4 @@ function handleSubmit(event) {
 
 // Scaffold assignment (adjust id if needed):
 // const form = document.getElementById('sample-form');
-// if (form) form.onsubmit = handleSubmit;
+//if (form) form.onsubmit = handleSubmit;
