@@ -7,8 +7,14 @@
   </head>
   <body>
     <h1>Error handling (Level 03)</h1>
-    <button id="fetch-btn">Try fetch</button>
-    <div id="error" aria-live="polite"></div>
+    <form id="login-form">
+      <label>Username: <input name="username" type="text" /></label>
+      <label>Password: <input name="password" type="password" /></label>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="error" role="alert" aria-live="polite"></div>
+    <div id="success" role="status" aria-live="polite"></div>
 
     <script src="script.js" defer></script>
   </body>
