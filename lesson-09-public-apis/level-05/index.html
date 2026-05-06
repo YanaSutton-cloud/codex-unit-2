@@ -4,22 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Level 05 — Trivia API</title>
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Trivia</h1>
-    <form id="queryForm">
-      <label>
-        Category
-        <input name="category" />
-      </label>
-      <label>
-        Difficulty
-        <input name="difficulty" />
-      </label>
-      <button type="submit">Get Question</button>
+    <h1>Trivia API (Level 05)</h1>
+    <form id="search-form">
+      <label>Category: <input name="category" /></label>
+      <label>Difficulty: <input name="difficulty" /></label>
+      <button type="submit">Search></button>
     </form>
+    <pre id="out"></pre>
 
-    <div id="question"></div>
+    <script src="script.js" defer></script>
   </body>
 </html>
