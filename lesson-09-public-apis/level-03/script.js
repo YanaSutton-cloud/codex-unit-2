@@ -1,10 +1,35 @@
-const btn3 = document.getElementById("fetch-btn");
-const errorEl3 = document.getElementById("error");
+const form = document.getElementById("login-form");
+form.onsubmit = handlesubmit;
+const errorEl2 = document.getElementById("error");
+const successEl2 = document.getElementById("success");
 
-if (btn3) {
-  btn3.addEventListener("click", async () => {
-    // TODO: wrap fetch in try/catch
-    // TODO: check response.ok and show friendly messages
-    console.log("level-03 fetch placeholder");
-  });
+async function handlesubmit(event) {
+    event.preventDefault();
+    const formTag = event.target;
+    const data = {
+      username: formTag.elemens.username.value,
+      password: formTag.elements.password.value,
+    };
+    const dataString = JSON.stringify(data);
+    const response = await fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      body: dataString,
+      headers: { "Content-Type": "application/json" },
+});
+const result = await response.json();
+const message = result.message;
+const firstName = result.firstname;
+const errorTag = document.getElementById("error");
+const successTag = document.getElementById("success");
+if (message) {
+  errorTag.innerText = message;
+  successTag.innerText = "";
+} else if (firstName) {
+successTag.innerText = "You are logged in as" + firstname;
+errorTag.innerText = "";
+formTag.reset();
 }
+} catch (error) {
+  console.error("You need to use the POST method.");
+  const errorTag = document.getElementById("error");
+ } 
