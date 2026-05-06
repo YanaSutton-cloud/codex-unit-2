@@ -9,7 +9,5 @@ function handleSubmit(event) {
     difficulty: form.elements.difficulty.value,
   };
   const queryString = new URLSearchParams(data);
-  console.log(
-    "This is the query string: " + "category, science & difficulty, 1",
-  );
+  console.log("This is the query string: " + queryString);
 }
