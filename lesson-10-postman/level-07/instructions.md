@@ -11,9 +11,10 @@
 
 ## Complete these tasks
 
-- Choose a POST-capable test API and construct a correct JSON payload.
-- Send the POST request and inspect the result.
-- Console.log a documentation finding and the parsed response in `script.js`.
+- Pick an API from the instructor list and find a suitable POST endpoint.
+- Read the API docs.
+- Make the POST request with data and inspect the response.
+- Use `script.js` to `console.log` one fact learned from the documentation.
 
 ## Hints
 

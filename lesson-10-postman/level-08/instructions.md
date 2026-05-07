@@ -11,8 +11,13 @@
 
 ## Complete these tasks
 
+- Choose an API.
 - Create `index.html` with a form and attach `script.js`.
-- Implement a submit handler that prevents default, constructs the request, calls the API, and updates the DOM with parsed JSON or error messages.
+- Implement a submit handler that prevents default.
+- Format the data object.
+- Constructs the request with data
+- Calls the API.
+- Provide user feedback and error messages.
 
 ## Hints
 
@@ -26,10 +31,3 @@
 ## Usage tips
 
 - Test the API call in Postman first, then wire it into the form handler.
-
-## Example
-
-```
-// Minimal handler outline (students should complete):
-// form.addEventListener('submit', e => { e.preventDefault(); /* build request */ });
-```
