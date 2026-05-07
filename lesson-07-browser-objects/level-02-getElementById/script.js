@@ -1,6 +1,6 @@
 // Level 02 — getElementById starter
 // TODO: select the element with document.getElementById('sample')
-const sampleElement = document.getElementById(sample);
+const sampleElement = document.getElementById("sample");
 
 // TODO: log properties: id, classList, innerText, innerHTML, attributes
 console.log(sampleElement.id);
