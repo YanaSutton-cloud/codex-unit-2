@@ -9,7 +9,7 @@ function handleSubmit(event) {
   // TODO: prevent default when ready
   // event.preventDefault();
   // TODO: const form = event.target; const message = form.elements.message.value; display via innerText
-  console.log(formTag.elements.email.message.value.form.elements);
+  console.log(formTag.elements.message.value);
 }
 
 // const form = document.getElementById('sample-form');
