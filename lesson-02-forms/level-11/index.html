@@ -10,14 +10,16 @@
     <form>
       <fieldset>
         <label for="name">Name</label>
-        <input type="text" required />
+        <input type="text" id="name" required />
 
         <label for="email">Email:</label>
-        <input type="email" required />
+        <input type="email" id="email" required />
       </fieldset>
       <br />
+
       <label for="message">Enter Your Message Here</label>
-      <textarea rows="10" cols="50"></textarea>
+      <input type="text" id="message" required />
+      <textarea id="message" name="message" rows="10"></textarea>
       <button type="submit">Send message</button>
       <!-- TODO: Combine all pieces: inputs, labels, fieldsets, validation, and submit control -->
     </form>
