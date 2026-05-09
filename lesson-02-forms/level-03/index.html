@@ -8,8 +8,13 @@
   <body>
     <h1>Contact Form</h1>
     <form>
-      <label>Enter your question for customer service:</label>
-      <textarea rows="5" cols="50"></textarea>
+      <label for="question">Enter your question for customer service:</label>
+      <input type="text" id="question" />
+      <textarea
+        name="question"
+        rows="50"
+        placeholder="Enter Your Question"
+      ></textarea>
       <button type="submit">Submit Message</button>
     </form>
   </body>
