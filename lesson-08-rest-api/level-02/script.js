@@ -1,11 +1,13 @@
 // Level 02 starter script
 // TODO: Get & save the form element to `form`, attach onsubmit, and call event.preventDefault().
 const form = document.getElementById("sample-form");
+form.onsubmit = handleSubmit;
 const result = document.getElementById("result");
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
   event.preventDefault();
-  // TODO: set result.innerText to a short explanation about fetch
+  fetch();
+  const resultTag = document.getElementById("result");
+  resultTag.innerText =
+    "The fetch function takes in a URL and connects to a server.";
 }
-
-if (form) form.onsubmit = handleSubmit;
