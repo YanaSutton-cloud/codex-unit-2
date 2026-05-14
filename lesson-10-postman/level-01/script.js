@@ -2,4 +2,6 @@
 // No solution provided — students should confirm Postman opens.
 
 // Optional: students may log a short confirmation here after installing.
-console.log("TODO: Confirm Postman installed and opened");
+console.log(
+  "Postman is installed although I was unsure how to answer some of the questions. Then an AI screen popped up, I did'nt know what to do.",
+);
