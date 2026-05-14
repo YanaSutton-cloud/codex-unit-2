@@ -5,11 +5,11 @@ form.onsubmit = handleSubmit;
 
 function handleSubmit(event) {
   event.preventDefault();
-  const formTag = event.target;
+  const form = event.target;
   // TODO: prevent default when ready
   // event.preventDefault();
   // TODO: const form = event.target; const message = form.elements.message.value; display via innerText
-  console.log(formTag.elements.message.value);
+  const message = form.elements.message.value;
 }
 
 // const form = document.getElementById('sample-form');

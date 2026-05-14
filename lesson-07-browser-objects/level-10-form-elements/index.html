@@ -8,9 +8,16 @@
   </head>
   <body>
     <form id="sample-form">
-      <input type="text" name="message" placeholder="Message" />
+      <label for="message">Message</label>
+      <input type="text" id="message" />
+      <label for="email">Email</label>
+      <input type="text" id="email" />
       <button type="submit">Submit</button>
     </form>
+    <p>
+      Form with named inputs. Use 'form.elements' in 'script.js' to read values
+      and display them in the DOM or console.
+    </p>
     <output id="result">Result placeholder</output>
   </body>
 </html>
