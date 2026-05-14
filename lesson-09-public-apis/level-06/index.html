@@ -7,11 +7,17 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Trivia FeedBack (Level 06)</h1>
-    <form id="search-form">
-      <label>Category: <input name="category" type="text" /></label><br />
-      <label>Difficulty: <input name="difficulty" type="text" /></label>
-      <button type="submit">Get Trivia</button>
+    <h1>Trivia — Choices</h1>
+    <form id="queryForm">
+      <label>
+        Category
+        <input name="categories" />
+      </label>
+      <label>
+        Difficulty
+        <input name="difficulties" />
+      </label>
+      <button type="submit">Get Question</button>
     </form>
     <div id="question"></div>
     <div id="choiceA"></div>
