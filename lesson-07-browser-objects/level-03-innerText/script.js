@@ -2,8 +2,8 @@
 // Example starter:
 // const element = document.getElementById('desc');
 // console.log('before:', element.innerText);
+const form = document.getElementById("desc");
 const pTag = document.getElementById("desc");
 
-console.log(pTag.innerText);
 pTag.innerText = "Hello World!";
 console.log(pTag.innerText);
