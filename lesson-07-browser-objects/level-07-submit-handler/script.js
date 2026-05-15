@@ -4,3 +4,9 @@
 // const form = document.getElementById('sample-form');
 // function handleSubmit(event) { console.log('onsubmit handler'); }
 // form.onsubmit = handleSubmit;
+const form = document.querySelector("form");
+form.onsubmit = handleSubmit;
+
+function handleSubmit(event) {
+  console.log("onsubmit handler called");
+}
