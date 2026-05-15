@@ -11,8 +11,19 @@ async function handleSubmit(event) {
   const dataString = JSON.stringify(data);
   const response = await fetch("https://dummyjson.com/auth/login", {
     method: "POST",
-    body: dataString,
     headers: { "Content-Type": "application/json" },
+    body: "dataString",
   });
   const result = await response.json();
+  const message = result.message;
+  const errorTag = document.getElementById("error");
+  errorTag.innerText = message;
+}
+
+const successE1 = document.getElementById("success");
+
+if (form) {
+  form.addEventListener("submit", async (event) => {
+    console.log("submit handler placeholder");
+  });
 }
