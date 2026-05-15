@@ -3,3 +3,10 @@
 // Example starter:
 // const element = document.getElementById('sample');
 // console.log(element.id);
+const sampleElement = document.getElementById("sample");
+
+console.log(sampleElement.id);
+console.log(sampleElement.classList);
+console.log(sampleElement.innerText);
+console.log(sampleElement.innerText);
+console.log(sampleElement.attributes);
