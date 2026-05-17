@@ -22,20 +22,21 @@ async function handlesubmit(event) {
     console.error(err);
     errorEl.innerText = "Network error - try again";
   }
-    const message = result.message;
-    const firstName = result.firstname;
-    const errorTag = document.getElementById("error");
-    const successTag = document.getElementById("success");
-    if (!response.ok) throw new Error("HTTP " + response.status);
-      errorTag.innerText = message;
-      successTag.innerText = "";
-    } else if (firstName) {
-      successTag.innerText = "You are logged in as" + firstname;
-      errorTag.innerText = "";
-      formTag.reset();
-    }
-    debugger;
+  const message = result.message;
+  const firstName = result.firstname;
+  const errorTag = document.getElementById("error");
+  const successTag = document.getElementById("success");
+  if (!response.ok) throw new Error("HTTP " + response.status);
+  errorTag.innerText = message;
+  successTag.innerText = "";
+}
+if (firstName) {
+  successTag.innerText = "You are logged in as" + firstname;
+  errorTag.innerText = "";
+  formTag.reset();
+}
+debugger;
 
-    console.error("You need to use the POST method.");
-    const errorTag = document.getElementById("error");
-    errorTag.innerText = "There's an error connecting to the server.";
+console.error("You need to use the POST method.");
+const errorTag = document.getElementById("error");
+errorTag.innerText = "There's an error connecting to the server.";

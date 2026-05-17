@@ -9,8 +9,7 @@ function handleSubmit(event) {
     difficulty: form.elements.difficulty.value,
   };
   const queryString = new URLSearchParams(data);
-  console.log("This is the query string: " + queryString);
-
   const params = new URLSearchParams({ category, difficulty });
   const query = params.toString();
+  console.log("This is the query string: " + queryString);
 }

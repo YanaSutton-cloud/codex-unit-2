@@ -3,13 +3,15 @@ formTag.onsubmit = handleSubmit;
 
 async function handleSubmit(event) {
   event.preventDefault();
-  // TODO: Create a `data` object with an "api-key" property (quoted when hyphenated)
-  // TODO: Convert `data` into a query string and fetch jokes (or send as header if API requires)
-  // TODO: Parse response and render a joke into the DOM. On invalid key, show an error message in the page
-  const data = { "api-key": "efc30af1a6df461" };
+  const data = {
+    "api-key": "5f71845b4c384bd39d85b1e858bf218a",
+  };
   const queryString = new URLSearchParams(data);
   const response = await fetch(
-    "https://api.humorapi.com/memes/random" + "?" + queryString,
+    "https://api.humorapi.com/memes/random" +
+      "?" +
+      queryString +
+      "api=5f71845b4c384bd39d85b1e858bf218a",
   );
   const result = await response.json();
   const description = result.description;
