@@ -10,4 +10,7 @@ function handleSubmit(event) {
   };
   const queryString = new URLSearchParams(data);
   console.log("This is the query string: " + queryString);
+
+  const params = new URLSearchParams({ category, difficulty });
+  const query = params.toString();
 }
