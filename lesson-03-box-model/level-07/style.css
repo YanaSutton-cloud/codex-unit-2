@@ -1,6 +1,9 @@
 /* TODO: Toggle box-sizing and observe width differences */
-.box {
+.box-a {
   width: 200px;
   padding: 20px;
   border: 4px solid #333;
+}
+.box-b {
+  box-sizing: border-box;
 }
