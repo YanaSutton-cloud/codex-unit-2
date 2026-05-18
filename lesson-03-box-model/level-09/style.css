@@ -4,10 +4,11 @@
   border: 1px solid #ccc;
   padding: 8px;
 }
+
 .item {
-  display: inline-block;
-  width: 160px;
-  padding: 12px;
-  border: 2px solid #444;
-  margin: 8px;
+  box-sizing: border-box;
+  /* Total width: 160px
+     Total height: 80px
+     Content box width: 160px - (2 * 20px) - (2 * 8px) = 104px
+     Content box height: 80px - (2 * 20px) - (2 * 8px) = 24px */
 }
