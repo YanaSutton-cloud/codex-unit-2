@@ -6,6 +6,7 @@
 }
 
 .item {
+  flex-direction: column;
   box-sizing: border-box;
   /* Total width: 160px
      Total height: 80px
