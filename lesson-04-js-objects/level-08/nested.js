@@ -12,4 +12,6 @@ const car = {
   },
 };
 
+console.log(car.features);
+
 export default car;
