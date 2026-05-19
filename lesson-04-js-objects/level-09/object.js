@@ -1,10 +1,13 @@
-// TODO: Declare named functions then assign them as methods on the exported object.
-// Example:
-// function greet(name) { return 'Hi ' + name }
-// const user = { name: 'Ava' }
-// user.greet = greet
-// export default user
+function greet() {
+  console.log("Hello World!");
+}
+
 const user = {
-  /* TODO: add name */
+  name: "Yana",
+  email: "my@email.com",
 };
+
+user.address = "777 abc St.";
+user.greet = greet;
+
 export default user;
