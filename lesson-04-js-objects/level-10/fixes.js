@@ -3,14 +3,14 @@
 // Your task: give the function a name, then attach the named function to the object.
 
 // Buggy starter (anonymous function assigned):
-function greet() {
-  console.log("hello");
+function say() {
+  return `Hello, ${name}!`;
 }
 
 const user = {
   name: "Ava",
 };
 
-user.greet = greet;
+user.say = hello;
 
 export default user;
