@@ -6,4 +6,15 @@
 
 // Add your lines below:
 
-let userName;
+let userFirstName;
+let userLastName;
+let yearOfBirth;
+let carYear;
+let carModel;
+let paintColor;
+let numberOfStudents;
+let ageOfStudents;
+let animalSpecies;
+let animalSize;
+
+export default yearOfBirth;
