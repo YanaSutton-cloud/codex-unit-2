@@ -7,4 +7,16 @@
 
 // Add your lines below:
 
-let totalCount = 0;
+let userFirstName = "Yana";
+let userLastName = "Sutton";
+let carModel = "Audi";
+let carColor = "Black";
+let nameOfPet = "Beau";
+
+let yearBorn = 1980;
+let totalCount = 10;
+let carYear = 2021;
+let numberOfDoors = 4;
+let numberOfPets = 1;
+
+export default yearBorn;
