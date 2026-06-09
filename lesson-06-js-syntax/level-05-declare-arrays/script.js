@@ -4,4 +4,15 @@
 // Example:
 // let userNames = ["Ava", "Jon", "Maya"];
 
-let userNames = [];
+let userNames = ["Yana", "AmaZen", "Elaine"];
+let userAges = [45, 1, 88];
+let icecreamToppings = ["Whip Cream", "Fudge", "Cherries"];
+let icecreamScoops = [1, 2, 3];
+let weeklyForecasts = ["Sunny", "Partly Cloudly", "Thunder Storms"];
+let weeklyTemperatures = [100, 80, 70];
+let myFruits = ["apple", "banana", "kiwi"];
+let fruitBags = [0, 1, 2];
+let birthMonths = ["January", "September", "December"];
+let birthYears = [2025, 1937, 1980];
+
+export default userNames;
