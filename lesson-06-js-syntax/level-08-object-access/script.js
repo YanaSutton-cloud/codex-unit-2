@@ -32,8 +32,14 @@ const order = {
 };
 
 const id = order.id;
-const name = order.customer.name;
+const customerName = order.customer.name;
+const customerAddress = order.street.city.state;
+const customerContact = email.phone;
 const status = order.status;
+const items = order.id.name;
 const tax = order.totals.tax;
+const shippingMethod = order.shippingMethod;
+const price = order.id.price;
+const total = order.subtotal.tax;
 
 export default tax;
