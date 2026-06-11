@@ -1,6 +1,6 @@
 // Level 10 — form-elements starter
 // TODO: assign a named function to form.onsubmit that reads a text input value
-const form = document.querySelector("form");
+const form = document.querySelector("#sample-form");
 form.onsubmit = handleSubmit;
 
 function handleSubmit(event) {
@@ -10,6 +10,7 @@ function handleSubmit(event) {
   // event.preventDefault();
   // TODO: const form = event.target; const message = form.elements.message.value; display via innerText
   const message = form.elements.message.value;
+  document.querySelector("#result").innerText = message;
 }
 
 // const form = document.getElementById('sample-form');

@@ -7,8 +7,11 @@ form.onsubmit = handleSubmit;
 function handleSubmit(event) {
   event.preventDefault();
   const formTag = event.target;
-  const username = formTag.elements.username.value;
-  if (username === "Yana") formTag.reset;
+  const firstName = formTag.elements.firstName.value;
+  const lastName = formTag.elements.lastName.value;
+  if (firstName === "Yana") {
+    form.reset();
+  }
   // event.preventDefault();
   // const form = event.target;
   // TODO: validate fields, show summary in DOM, then call form.reset();

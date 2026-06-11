@@ -11,6 +11,9 @@ function handleSubmit(event) {
   console.log(formTag.id);
   console.log("event.target:", event.target);
   console.log("event.currentTarget:", event.currentTarget);
+  console.log(
+    "EventTarget is a built-in Web API interface implemented by objects that can receive events and hold event listeners",
+  );
 
   // TODO: const form = event.target; use form.elements to access inputs
 }

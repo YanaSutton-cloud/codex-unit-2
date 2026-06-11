@@ -3,4 +3,4 @@
 const divTag = document.getElementById("content");
 
 console.log(divTag.innerHTML);
-divTag.innerHTML = "<h1>Hello World!</h1>";
+divTag.innerHTML = "<strong>Hello World!</strong>";

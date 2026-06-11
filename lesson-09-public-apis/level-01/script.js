@@ -24,6 +24,6 @@ const successE1 = document.getElementById("success");
 
 if (form) {
   form.addEventListener("submit", async (event) => {
-    console.log("submit handler placeholder");
+    console.log("result");
   });
 }

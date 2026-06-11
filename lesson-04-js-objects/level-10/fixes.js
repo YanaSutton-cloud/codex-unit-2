@@ -4,13 +4,13 @@
 
 // Buggy starter (anonymous function assigned):
 function say() {
-  return `Hello, ${name}!`;
+  return "Hello" + user.name;
 }
 
 const user = {
   name: "Ava",
 };
 
-user.say = hello;
+user.say = say;
 
 export default user;

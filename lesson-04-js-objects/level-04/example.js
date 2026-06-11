@@ -2,7 +2,7 @@
 // Example: export default { a: 1, b: "x" };
 const student = {
   level: 2,
-  firstname: "Yana",
-  lastname: "Sutton",
+  firstName: "Yana",
+  lastName: "Sutton",
 };
-export default student;
+export default { level: 2, firstName: "Yana", lastName: "Sutton" };

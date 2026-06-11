@@ -9,4 +9,7 @@ form.onsubmit = handleSubmit;
 
 function handleSubmit(event) {
   console.log("onsubmit handler called");
+  console.log(
+    "OnSubmit is an event handler or HTML attribute that triggers a block of JavaScript code when a user submits a form",
+  );
 }

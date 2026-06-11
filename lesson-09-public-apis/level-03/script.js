@@ -18,24 +18,24 @@ async function handlesubmit(event) {
       headers: { "Content-Type": "application/json" },
     });
     const result = await response.json();
-  } catch (err) {
-    console.error(err);
-    errorEl.innerText = "Network error - try again";
-  }
-  const message = result.message;
+    const message = result.message;
   const firstName = result.firstname;
   const errorTag = document.getElementById("error");
   const successTag = document.getElementById("success");
   if (!response.ok) throw new Error("HTTP " + response.status);
   errorTag.innerText = message;
   successTag.innerText = "";
-}
 if (firstName) {
   successTag.innerText = "You are logged in as" + firstname;
   errorTag.innerText = "";
   formTag.reset();
 }
 debugger;
+  } catch (err) {
+    console.error(err);
+    errorEl.innerText = "Network error - try again";
+  }
+  
 
 console.error("You need to use the POST method.");
 const errorTag = document.getElementById("error");

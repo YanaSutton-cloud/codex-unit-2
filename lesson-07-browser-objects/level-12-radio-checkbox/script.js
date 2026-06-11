@@ -3,8 +3,14 @@
 // const form = document.getElementById('sample-form');
 // const color = form.elements.color.value;
 // const isSubscribed = form.elements.subscribe.checked;
-const form = document.getElementById("sample-form");
-form.onsubmit = handleSubmit;
+const formTag = document.getElementById("sample-form");
+formTag.onsubmit = handleSubmit;
 
-const color = form.nextElementSibling.color.value;
-const isSubscribed = form.nextElementSibling.subscribe.checked;
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.terget;
+  const color = form.elements.color.value;
+  const isSubscribed = form.elements.subscribe.checked;
+  console.log(color);
+  console.log(isSubscribed);
+}

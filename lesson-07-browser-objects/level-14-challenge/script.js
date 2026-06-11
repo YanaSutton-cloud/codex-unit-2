@@ -1,11 +1,16 @@
 const form = document.getElementById("demo-form");
 form.onsubmit = handleSubmit;
 
-async function handleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
   const formTag = event.target;
-  const username = formTag.elements.username.value;
-  if (username === "Yana") formTag.reset;
+  const name = formTag.elements.name.value;
+  const email = formTag.elements.email.value;
+  if (name === "Yana") {
+    form.reset(form);
+  }
+  const output = document.getElementById("out");
+  output.innerText = "This demonstrates innnerText";
 }
 console.log("form-reset scaffold");
 

@@ -1,6 +1,6 @@
 // Level 08 — preventDefault starter
 // TODO: update your submit handler to call event.preventDefault() before other logic
-const form = document.querySelector("sample-form");
+const form = document.querySelector("#sample-form");
 form.onsubmit = handleSubmit;
 
 function handleSubmit(event) {
@@ -9,6 +9,9 @@ function handleSubmit(event) {
   event.preventDefault();
   console.log(
     "submit handler: preventDefault not yet called (uncomment to test)",
+  );
+  console.log(
+    "PreventDefault is a method that stops the browser from executing the default action associated with an event.",
   );
 }
 
