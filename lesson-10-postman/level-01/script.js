@@ -5,3 +5,6 @@
 console.log(
   "Postman is installed although I was unsure how to answer some of the questions. Then an AI screen popped up, I did'nt know what to do.",
 );
+console.log(
+  "UPDATE 6/13/26: I previously was able to understand how to use Postman, but still have to become a bit more familiar with it.",
+);
