@@ -4,17 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>API Challenge — Form</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <h1>API Challenge</h1>
       <form id="api-form">
-        <label for="input">Value</label>
-        <input id="input" name="value" />
-        <button type="submit">Send</button>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Full Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="abc@example.com">
+        </div>
+          <button type="submit" id="submitBtn">Submit Info</button>
+       </form>
+         <output id="result"></output>
+       </div>
       </form>
-      <output id="result"></output>
     </main>
-    <script src="script.js"></script>
   </body>
 </html>
